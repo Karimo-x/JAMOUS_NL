@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Phone, MessageCircle, Mail, MapPin, Calendar, Clock, CheckCircle, ArrowLeft } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
@@ -11,6 +11,10 @@ export default function EquipmentDetailPage() {
   const item = equipment.find((e) => e.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
   const [showContactModal, setShowContactModal] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!item) {
     return (

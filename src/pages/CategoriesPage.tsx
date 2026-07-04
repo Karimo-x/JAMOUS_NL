@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 import CategoryCard from '../components/CategoryCard';
 import { categories, equipment } from '../data/equipmentData';
 
 export default function CategoriesPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const categoriesWithCount = categories.map((cat) => ({
     ...cat,
     count: equipment.filter((e) => e.category === cat.id).length,

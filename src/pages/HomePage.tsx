@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Search, TrendingUp, DollarSign, Shield, Truck, Headphones, Globe, Award, ArrowLeft, Phone, MessageCircle } from 'lucide-react';
 import EquipmentCard from '../components/EquipmentCard';
 import CategoryCard from '../components/CategoryCard';
@@ -6,6 +7,9 @@ import TestimonialCard from '../components/TestimonialCard';
 import { equipment, categories, brands, testimonials } from '../data/equipmentData';
 
 export default function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const featuredEquipment = equipment.filter((item) => item.featured).slice(0, 6);
   const equipmentByCategory = categories.map((cat) => ({
     ...cat,
@@ -33,27 +37,18 @@ export default function HomePage() {
         ></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center" style={{ minHeight: '90vh' }}>
-          <div className="w-full md:w-2/3 lg:w-1/2 text-center md:text-right animate-fadeIn py-10 md:py-0">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full mb-6 md:mb-6" style={{ background: 'rgba(255, 193, 7, 0.15)', border: '1px solid #FFC107', marginTop: '40px' }}>
-              <span className="text-sm font-semibold" style={{ color: '#FFC107' }}>🏗️ منصة الآليات الثقيلة الأوروبية</span>
-            </div>
-
+          <div className="w-full md:w-2/3 lg:w-1/2 text-right animate-fadeIn py-10 md:py-0">
             {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ marginTop: '20px' }}>
               استيراد <span style={{ color: '#FFC107' }}>الآليات الثقيلة</span> الأوروبية
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl mb-6 md:mb-8 leading-relaxed" style={{ color: '#E0E0E0' }}>
-              معدات أوروبية عالية الجودة بأسعار منافسة
-            </p>
             <p 
-              className="text-lg mb-8 md:mb-12 leading-relaxed" 
+              className="text-2xl md:text-4xl mb-8 md:mb-12 leading-relaxed font-bold" 
               style={{ 
-                color: '#F8F9FA', 
-                fontWeight: 600,
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.4)'
+                color: '#FFFFFF', 
+                textShadow: '0 4px 8px rgba(0, 0, 0, 0.6)',
+                animation: 'pulse 2s infinite'
               }}
             >
               استيراد مباشر من كافة دول أوروبا إلى كافة أنحاء سوريا
@@ -88,6 +83,29 @@ export default function HomePage() {
                 <span>تواصل معنا</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brands */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              العلامات التجارية العالمية
+            </h2>
+            <p className="text-xl text-gray-600">نتعامل مع أفضل العلامات التجارية الأوروبية</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
+            {brands.map((brand) => (
+              <div
+                key={brand.name}
+                className="bg-gray-50 rounded-xl p-6 flex items-center justify-center card-hover border border-gray-200"
+              >
+                <span className="text-xl font-bold text-gray-700">{brand.logo}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -218,29 +236,6 @@ export default function HomePage() {
               <span>عرض جميع الآليات</span>
               <ArrowLeft className="w-5 h-5 ml-1" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Brands */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              العلامات التجارية العالمية
-            </h2>
-            <p className="text-xl text-gray-600">نتعامل مع أفضل العلامات التجارية الأوروبية</p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
-            {brands.map((brand) => (
-              <div
-                key={brand.name}
-                className="bg-gray-50 rounded-xl p-6 flex items-center justify-center card-hover border border-gray-200"
-              >
-                <span className="text-xl font-bold text-gray-700">{brand.logo}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
