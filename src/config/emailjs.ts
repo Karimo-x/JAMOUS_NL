@@ -6,8 +6,8 @@
 // 4. Replace the placeholder values below with your actual credentials
 
 export const emailConfig = {
-  SERVICE_ID: 'service_ji78poe',
-  TEMPLATE_ID: 'template_qiat3bm',
-  PUBLIC_KEY: 'izvdwEWeAcPEHw4lx',
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
   TO_EMAIL: 'Karemjamous27@gmail.com',
 };
