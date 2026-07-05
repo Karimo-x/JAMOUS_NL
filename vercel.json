@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npx vite build",
   "installCommand": "npm install",
-  "framework": "vite",
+  "framework": null,
   "build": {
     "env": {
       "VITE_EMAILJS_SERVICE_ID": "@vite_emailjs_service_id",
