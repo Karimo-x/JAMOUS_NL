@@ -30,6 +30,15 @@ export default function HomePage() {
           backgroundRepeat: 'no-repeat'
         }}
       >
+        <style>{`
+          @media (max-width: 768px) {
+            section {
+              background-image: url('/images/hero.png') !important;
+              background-position: center center !important;
+              background-size: cover !important;
+            }
+          }
+        `}</style>
         {/* Dark Overlay */}
         <div 
           className="absolute inset-0" 
