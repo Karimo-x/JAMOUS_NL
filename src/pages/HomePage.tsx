@@ -33,7 +33,7 @@ export default function HomePage() {
         <style>{`
           @media (max-width: 768px) {
             section {
-              background-image: url('/images/hero.png') !important;
+              background-image: url('/images/hero section.png') !important;
               background-position: center center !important;
               background-size: cover !important;
             }
