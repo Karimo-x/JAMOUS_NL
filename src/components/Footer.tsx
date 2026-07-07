@@ -15,7 +15,7 @@ export default function Footer() {
                 <span className="font-bold text-xl" style={{ color: '#000000' }}>JS</span>
               </div>
               <div>
-                <div className="text-xl font-bold">JAMOUS_NL</div>
+                <div className="text-xl font-bold">JAMOUS_<span style={{ color: '#FFC107' }}>NL</span></div>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -76,21 +76,21 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ color: '#FFC107' }}>معلومات التواصل</h3>
             <ul className="space-y-4">
-              <li className="flex items-start" style={{ gap: '14px' }}>
+              <li className="flex items-start" style={{ gap: '20px' }}>
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#FFC107' }} />
                 <span className="text-sm leading-relaxed" style={{ color: '#B0B0B0' }}>
                   سوريا – ريف دمشق – التل<br />
                   المعهد العالي للعلوم السياسية<br />
-                  بجانب محطة فادي كار
+                  مقابل محطة فادي كار
                 </span>
               </li>
-              <li className="flex items-center min-h-[24px]" style={{ gap: '14px' }}>
+              <li className="flex items-center min-h-[24px]" style={{ gap: '20px' }}>
                 <Phone className="w-5 h-5 flex-shrink-0" style={{ color: '#FFC107' }} />
                 <a href="tel:+963968057858" className="transition-colors text-sm" style={{ color: '#B0B0B0' }} onMouseEnter={(e) => e.currentTarget.style.color = '#FFC107'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>
                   +963 968 057 858
                 </a>
               </li>
-              <li className="flex items-center min-h-[24px]" style={{ gap: '14px' }}>
+              <li className="flex items-center min-h-[24px]" style={{ gap: '20px' }}>
                 <MessageCircle className="w-5 h-5 flex-shrink-0" style={{ color: '#FFC107' }} />
                 <a
                   href="https://wa.me/963968057858"
@@ -104,13 +104,13 @@ export default function Footer() {
                   +963 968 057 858
                 </a>
               </li>
-              <li className="flex items-center min-h-[24px]" style={{ gap: '14px' }}>
+              <li className="flex items-center min-h-[24px]" style={{ gap: '20px' }}>
                 <Mail className="w-5 h-5 flex-shrink-0" style={{ color: '#FFC107' }} />
                 <a href="mailto:Karemjamous27@gmail.com" className="transition-colors text-sm" style={{ color: '#B0B0B0' }} onMouseEnter={(e) => e.currentTarget.style.color = '#FFC107'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>
                   Karemjamous27@gmail.com
                 </a>
               </li>
-              <li className="flex items-center min-h-[24px]" style={{ gap: '14px' }}>
+              <li className="flex items-center min-h-[24px]" style={{ gap: '20px' }}>
                 <Clock className="w-5 h-5 flex-shrink-0" style={{ color: '#FFC107' }} />
                 <span className="text-sm" style={{ color: '#B0B0B0' }}>متوفرون 24/7</span>
               </li>
@@ -122,7 +122,7 @@ export default function Footer() {
         <div className="pt-8 mt-8" style={{ borderTop: '1px solid #2B2B2B' }}>
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm" style={{ color: '#B0B0B0' }}>
-              © {currentYear} JAMOUS_NL. جميع الحقوق محفوظة.
+              © {currentYear} JAMOUS_<span style={{ color: '#FFC107' }}>NL</span>. جميع الحقوق محفوظة.
             </p>
             <div className="flex items-center" style={{ gap: '18px' }}>
               <a

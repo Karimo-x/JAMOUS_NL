@@ -29,7 +29,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">قصتنا</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
             <p>
-              تأسست JAMOUS_NL بهدف سد الفجوة في سوق الآليات الثقيلة في سوريا من خلال توفير معدات أوروبية عالية الجودة بأسعار منافسة. نحن نؤمن بأن كل مشروع يستحق أفضل المعدات، ولهذا نعمل بلا كلل لجلب أفضل الآليات من أوروبا.
+              تأسست JAMOUS_<span style={{ color: '#FFC107' }}>NL</span> بهدف سد الفجوة في سوق الآليات الثقيلة في سوريا من خلال توفير معدات أوروبية عالية الجودة بأسعار منافسة. نحن نؤمن بأن كل مشروع يستحق أفضل المعدات، ولهذا نعمل بلا كلل لجلب أفضل الآليات من أوروبا.
             </p>
             <p>
               نتعامل مباشرة مع موردين موثوقين في ألمانيا، السويد، هولندا، المملكة المتحدة، وغيرها من الدول الأوروبية. كل آلية نقدمها تخضع لفحص شامل من قبل فريق من الخبراء قبل الشحن، مما يضمن حصولك على معدات موثوقة وذات جودة عالية.
@@ -128,7 +128,7 @@ export default function AboutPage() {
 
         {/* Why Choose Us */}
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">لماذا تختار JAMOUS_NL؟</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">لماذا تختار JAMOUS_<span style={{ color: '#FFC107' }}>NL</span>؟</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'معدات أوروبية عالية الجودة',

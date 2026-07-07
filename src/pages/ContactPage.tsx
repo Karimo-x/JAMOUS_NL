@@ -196,8 +196,8 @@ export default function ContactPage() {
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">معلومات التواصل</h2>
               <div className="space-y-6">
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
+                <div className="flex items-start space-x-reverse">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ml-6" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
                     <MapPin className="w-6 h-6" style={{ color: '#FFC107' }} />
                   </div>
                   <div>
@@ -205,13 +205,13 @@ export default function ContactPage() {
                     <div className="text-gray-600">
                       سوريا – ريف دمشق – التل<br />
                       المعهد العالي للعلوم السياسية<br />
-                      بجانب محطة فادي كار
+                      مقابل محطة فادي كار
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
+                <div className="flex items-start space-x-reverse">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ml-6" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
                     <Phone className="w-6 h-6" style={{ color: '#FFC107' }} />
                   </div>
                   <div>
@@ -228,8 +228,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
+                <div className="flex items-start space-x-reverse">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ml-6" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
                     <MessageCircle className="w-6 h-6" style={{ color: '#FFC107' }} />
                   </div>
                   <div>
@@ -248,8 +248,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
+                <div className="flex items-start space-x-reverse">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ml-6" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
                     <Mail className="w-6 h-6" style={{ color: '#FFC107' }} />
                   </div>
                   <div>
@@ -266,8 +266,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
+                <div className="flex items-start space-x-reverse">
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ml-6" style={{ background: 'rgba(255, 193, 7, 0.15)' }}>
                     <Clock className="w-6 h-6" style={{ color: '#FFC107' }} />
                   </div>
                   <div>
@@ -315,7 +315,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="موقع JAMOUS_NL - التل، ريف دمشق"
+              title="موقع JAMOUS_<span style={{ color: '#FFC107' }}>NL</span> - التل، ريف دمشق"
             ></iframe>
           </div>
         </div>

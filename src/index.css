@@ -137,3 +137,10 @@ body {
   background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
   background-size: 1000px 100%;
 }
+
+/* Hero section responsive background */
+@media (min-width: 1024px) {
+  .hero-section {
+    background-image: url('/images/laptop.jpg') !important;
+  }
+}

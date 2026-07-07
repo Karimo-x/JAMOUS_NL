@@ -30,9 +30,9 @@ export const categories = [
   { 
     id: 'wheel-loaders', 
     name: 'Wheel Loaders', 
-    nameAr: 'اللوادر', 
+    nameAr: 'التركسات', 
     icon: '🚜',
-    image: 'https://images.pexels.com/photos/416988/pexels-photo-416988.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'
+    image: '/images/volvo-l120h.png'
   },
   { 
     id: 'excavators', 
@@ -76,13 +76,6 @@ export const categories = [
     icon: '🚛',
     image: 'https://images.pexels.com/photos/35177799/pexels-photo-35177799.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'
   },
-  { 
-    id: 'graders', 
-    name: 'Graders', 
-    nameAr: 'السحابات', 
-    icon: '⚙️',
-    image: 'https://images.pexels.com/photos/12164798/pexels-photo-12164798.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'
-  },
 ];
 
 export const brands = [
@@ -102,7 +95,7 @@ export const equipment: Equipment[] = [
     name: 'Caterpillar 950H Wheel Loader',
     nameAr: 'كاتربيلر 950H لودر عجلي',
     category: 'wheel-loaders',
-    categoryAr: 'اللوادر',
+    categoryAr: 'التركسات',
     brand: 'Caterpillar',
     model: '950H',
     year: 2020,
@@ -217,7 +210,7 @@ export const equipment: Equipment[] = [
     name: 'Hyundai HL760-9 Wheel Loader',
     nameAr: 'هيونداي HL760-9 لودر عجلي',
     category: 'wheel-loaders',
-    categoryAr: 'اللوادر',
+    categoryAr: 'التركسات',
     brand: 'Hyundai',
     model: 'HL760-9',
     year: 2020,
@@ -359,7 +352,7 @@ export const equipment: Equipment[] = [
     name: 'Volvo L120H Wheel Loader',
     nameAr: 'فولفو L120H لودر عجلي',
     category: 'wheel-loaders',
-    categoryAr: 'اللوادر',
+    categoryAr: 'التركسات',
     brand: 'Volvo',
     model: 'L120H',
     year: 2021,

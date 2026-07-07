@@ -46,7 +46,7 @@ export default function Navbar() {
               <span className="font-bold text-xl" style={{ color: '#000000' }}>JS</span>
             </div>
             <div>
-              <div className="text-xl font-bold text-white">JAMOUS_NL</div>
+              <div className="text-xl font-bold text-white">JAMOUS_<span style={{ color: '#FFC107' }}>NL</span></div>
             </div>
           </Link>
 

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. المقدمة</h2>
               <p className="leading-relaxed">
-                في JAMOUS_NL، نحترم خصوصيتك ونلتزم بحماية معلوماتك الشخصية. توضح هذه السياسة كيفية جمعنا واستخدامنا وحماية المعلومات التي تقدمها لنا.
+                في JAMOUS_<span style={{ color: '#FFC107' }}>NL</span>، نحترم خصوصيتك ونلتزم بحماية معلوماتك الشخصية. توضح هذه السياسة كيفية جمعنا واستخدامنا وحماية المعلومات التي تقدمها لنا.
               </p>
             </section>
 

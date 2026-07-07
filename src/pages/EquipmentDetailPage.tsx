@@ -1,20 +1,64 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Phone, MessageCircle, Mail, MapPin, Calendar, Clock, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Calendar, Clock, CheckCircle, ArrowLeft, Send, AlertCircle } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import EquipmentCard from '../components/EquipmentCard';
 import Modal from '../components/Modal';
 import { equipment } from '../data/equipmentData';
+import emailjs from '@emailjs/browser';
+import { emailConfig } from '../config/emailjs';
 
 export default function EquipmentDetailPage() {
   const { id } = useParams();
   const item = equipment.find((e) => e.id === Number(id));
   const [selectedImage, setSelectedImage] = useState(0);
   const [showContactModal, setShowContactModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      await emailjs.send(
+        emailConfig.SERVICE_ID,
+        emailConfig.TEMPLATE_ID,
+        {
+          to_name: 'JAMOUS_NL',
+          from_name: formData.name,
+          reply_to: formData.email,
+          subject: `استفسار عن ${item?.nameAr}`,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        emailConfig.PUBLIC_KEY
+      );
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setShowContactModal(false), 2000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (!item) {
     return (
@@ -231,12 +275,29 @@ export default function EquipmentDetailPage() {
 
       {/* Contact Modal */}
       <Modal isOpen={showContactModal} onClose={() => setShowContactModal(false)} title="إرسال استفسار">
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          {/* Success/Error Messages */}
+          {submitStatus === 'success' && (
+            <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
+              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <p className="text-green-800 text-sm">تم إرسال استفسارك بنجاح! سنتواصل معك قريباً.</p>
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <p className="text-red-800 text-sm">حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.</p>
+            </div>
+          )}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">الاسم</label>
             <input
               type="text"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none"
               placeholder="أدخل اسمك"
             />
           </div>
@@ -244,7 +305,11 @@ export default function EquipmentDetailPage() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">البريد الإلكتروني</label>
             <input
               type="email"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none"
               placeholder="your@email.com"
             />
           </div>
@@ -252,27 +317,41 @@ export default function EquipmentDetailPage() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">رقم الهاتف</label>
             <input
               type="tel"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none"
               placeholder="+963 XXX XXX XXX"
             />
           </div>
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">الرسالة</label>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none resize-none"
               placeholder="أخبرنا كيف يمكننا مساعدتك..."
-              defaultValue={`مرحباً، أنا مهتم بـ ${item.nameAr}`}
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all btn-ripple font-semibold"
+            disabled={isSubmitting}
+            className="w-full text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all btn-ripple font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ background: '#FFC107' }}
-            onMouseEnter={(e) => e.currentTarget.style.background = '#E6AC00'}
-            onMouseLeave={(e) => e.currentTarget.style.background = '#FFC107'}
+            onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.background = '#E6AC00')}
+            onMouseLeave={(e) => !isSubmitting && (e.currentTarget.style.background = '#FFC107')}
           >
-            إرسال الاستفسار
+            {isSubmitting ? (
+              <span>جاري الإرسال...</span>
+            ) : (
+              <>
+                <Send className="w-5 h-5 ml-2 inline" />
+                <span>إرسال الاستفسار</span>
+              </>
+            )}
           </button>
         </form>
       </Modal>
