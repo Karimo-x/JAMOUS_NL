@@ -33,7 +33,7 @@ export default function HomePage() {
         {/* Dark Overlay */}
         <div 
           className="absolute inset-0" 
-          style={{ background: 'rgba(0, 0, 0, 0.6)' }}
+          style={{ background: 'rgba(0, 0, 0, 0.3)' }}
         ></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-between" style={{ minHeight: '90vh' }}>
