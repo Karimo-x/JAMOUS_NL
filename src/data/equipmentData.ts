@@ -72,9 +72,9 @@ export const categories = [
   { 
     id: 'dump-trucks', 
     name: 'Dump Trucks', 
-    nameAr: 'شاحنات القلاب', 
+    nameAr: 'رؤوس شاحنات', 
     icon: '🚛',
-    image: 'https://images.pexels.com/photos/35177799/pexels-photo-35177799.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'
+    image: '/images/scania.png'
   },
 ];
 
