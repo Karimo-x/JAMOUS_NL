@@ -218,10 +218,10 @@ export const equipment: Equipment[] = [
     condition: 'ممتازة',
     hours: 2200,
     location: 'بلجيكا',
-    image: 'https://images.pexels.com/photos/416988/pexels-photo-416988.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
+    image: '/images/هيونداي HL760-9 لودر عجلي.png',
     images: [
-      'https://images.pexels.com/photos/416988/pexels-photo-416988.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
-      'https://images.pexels.com/photos/33321432/pexels-photo-33321432.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200',
+      '/images/هيونداي HL760-9 لودر عجلي.png',
+      '/images/هيونداي HL760-9 لودر عجلي.png',
     ],
     specs: {
       power: '242 حصان',

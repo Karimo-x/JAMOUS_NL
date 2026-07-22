@@ -51,7 +51,7 @@ export default function HomePage() {
                 animation: 'pulse 2s infinite'
               }}
             >
-              استيراد مباشر من كافة دول أوروبا إلى كافة أنحاء سوريا
+              استيراد من كافة دول أوروبا إلى كافة أنحاء سوريا والعالم
             </p>
           </div>
 
